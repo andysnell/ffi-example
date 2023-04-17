@@ -7,14 +7,14 @@ namespace WickedByte\Tests\Foo;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
-use WickedByte\Foo\Foo;
+use WickedByte\Foo\CTime;
 
-#[CoversClass(Foo::class)]
-class FooTest extends TestCase
+#[CoversClass(CTime::class)]
+class CTimeTest extends TestCase
 {
     #[Test]
-    public function bar_returns_42(): void
+    public function time_returns_current_time(): void
     {
-        self::assertSame(42, Foo::bar());
+        self::assertSame(\time(), CTime::time());
     }
 }

@@ -1,9 +1,10 @@
 {
-    "name": "wickedbyte/project-skeleton",
-    "description": "Template for PHP Projects",
+    "name": "andysnell/ffi-example",
+    "description": "PHP FFI Example",
     "type": "project",
     "require": {
-        "php": "^8.2"
+        "php": "^8.2",
+        "ext-ffi": "*"
     },
     "require-dev": {
         "phpbench/phpbench": "^1.2",

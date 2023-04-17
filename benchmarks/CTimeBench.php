@@ -4,18 +4,25 @@ declare(strict_types=1);
 
 namespace WickedByte\Benchmarks\Foo;
 
+use PhpBench\Attributes\BeforeMethods;
 use PhpBench\Attributes\Iterations;
 use PhpBench\Attributes\Revs;
 use PhpBench\Attributes\Subject;
-use WickedByte\Foo\Foo;
+use WickedByte\Foo\CTime;
 
 #[Revs(100_000)]
 #[Iterations(5)]
-class FooBench
+class CTimeBench
 {
     #[Subject]
-    public function how_fast_is_42(): void
+    public function c_time(): void
     {
-        Foo::bar();
+        CTime::time();
+    }
+
+    #[Subject]
+    public function php_time(): void
+    {
+        \time();
     }
 }

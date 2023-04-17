@@ -10,6 +10,7 @@ RUN apt-get update && apt-get install -y \
     curl \
     git \
     less \
+    libffi-dev \
     libgmp-dev \
     libicu-dev \
     libzip-dev \
@@ -21,7 +22,7 @@ RUN apt-get update && apt-get install -y \
     zlib1g-dev \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
-RUN docker-php-ext-install -j$(nproc) bcmath gmp intl opcache zip
+RUN docker-php-ext-install -j$(nproc) bcmath ffi gmp intl opcache zip
 COPY --from=composer/composer:latest-bin /composer /usr/bin/composer
 
 FROM base as php82
