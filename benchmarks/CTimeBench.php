@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace WickedByte\Benchmarks\Foo;
 
-use PhpBench\Attributes\BeforeMethods;
 use PhpBench\Attributes\Iterations;
 use PhpBench\Attributes\Revs;
 use PhpBench\Attributes\Subject;
